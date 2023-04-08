@@ -1,27 +1,35 @@
 import datasource
 import tkinter as tk
 from tkinter import ttk
+from PIL import Image,ImageTk
 
 class Window(tk.Tk): 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         topFrame = ttk.LabelFrame(self,text="台北市行政區")
-        topFrame.pack()
+        topFrame.pack(pady=(30,10),padx=(320,0))
 
         length = len(datasource.sarea_list)
         self.radioStringVar = tk.StringVar()
 
         for i in range(length):
-            cols = i % 3
-            rows = i // 3
-            ttk.Radiobutton(topFrame,text=datasource.sarea_list[i],value=datasource.sarea_list[i],variable=self.radioStringVar,command=self.radio_Event).grid(column=cols, row=rows, sticky=tk.W, padx=10, pady=10)
+            cols = i % 4
+            rows = i // 4
+            ttk.Radiobutton(topFrame,text=datasource.sarea_list[i],value=datasource.sarea_list[i],variable=self.radioStringVar,command=self.combined_Event).grid(column=cols, row=rows, sticky=tk.W, padx=10, pady=10)
 
         self.radioStringVar.set("士林區")
         self.area_Alldata = datasource.getInfoFromArea(self.radioStringVar.get())
 
+#Label放入照片--------------------------------------------------------------
+        logoImage = Image.open(f'./images/{self.radioStringVar.get()}.jpg')
+        resizeImage = logoImage.resize((300,200),Image.LANCZOS)
+        self.logoTkimage = ImageTk.PhotoImage(resizeImage)
+        logoLabel = ttk.Label(self,image=self.logoTkimage)
+        logoLabel.place(x=50,y=20)
+
 #建立 Treeview 在 bottomFrame------------------------------------------------
         self.bottomFrame = ttk.LabelFrame(self,text=self.radioStringVar.get(),labelanchor="n")
-        self.bottomFrame.pack(pady=20)
+        self.bottomFrame.pack(pady=10,padx=10)
 
         columns = ('#1','#2','#3','#4','#5','#6','#7')
         self.tree = ttk.Treeview(self.bottomFrame,columns=columns, show='headings')
@@ -64,6 +72,19 @@ class Window(tk.Tk):
         # Populate the treeview with the info for the selected district
         for item in self.area_Alldata:
             self.tree.insert('',tk.END,values=[item['sna'][11:],item['mday'],item['tot'],item['sbi'],item['bemp'],item['ar'],item['act']])
+
+#建立Photo事件: 依行政區顯示照片------------------------------------------------
+    def photo_Event(self):
+        logoImage = Image.open(f'./images/{self.radioStringVar.get()}.jpg')
+        resizeImage = logoImage.resize((300,200),Image.LANCZOS)
+        self.logoTkimage = ImageTk.PhotoImage(resizeImage)
+        logoLabel = ttk.Label(self,image=self.logoTkimage)
+        logoLabel.place(x=50,y=20)
+
+#將所有事件合併------------------------------------------------
+    def combined_Event(self):
+        self.radio_Event()
+        self.photo_Event()
 
 def main():
     window=Window()
