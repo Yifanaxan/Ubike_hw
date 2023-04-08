@@ -62,8 +62,8 @@ class Window(tk.Tk):
 def main():
     window=Window()
     window.title("台北市Ubike2.0即時資訊")
+    print(window.area_Alldata)
     window.mainloop()
-    print(Window.area_Alldata)
 
 if __name__ == "__main__":
     main()

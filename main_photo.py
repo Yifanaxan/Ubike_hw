@@ -1,7 +1,7 @@
 import datasource
 import tkinter as tk
 from tkinter import ttk
-from PIL import Image,ImageTk
+from PIL import Image, ImageTk
 
 class Window(tk.Tk): 
     def __init__(self, **kwargs):
