@@ -1,0 +1,379 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.box1 {
+    display: flex;
+    height: 100px;
+    position: relative;
+}
+
+.box1 h1 {
+    padding: 10px 80px;
+    box-sizing: border-box;
+}
+
+.box1 ul {
+    position: absolute;
+    right: 80px;
+    display: flex;
+    height: 100px;
+    padding-top: 40px;
+    box-sizing: border-box;
+}
+
+.box1 li {
+    list-style: none;
+    margin-left: 30px;
+}
+
+.box1 li a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    transition: transform 0.5s ease-out;
+    /*chatGPT此指令必須搭配display:block才能用*/
+}
+
+.box1 li a:hover {
+    transform: scale(1.2);
+    /*chatGPT*/
+    font-weight: bolder;
+}
+
+.box2 {
+    background-image: url(./banner.jpg);
+    background-size: cover;
+    height: 400px;
+    padding-top: 80px;
+    color: white;
+}
+
+.box02 {
+    width: 500px;
+    margin-left: 80px;
+}
+
+.a h1 {
+    font-size: 80px;
+    margin-bottom: 10px;
+}
+
+.box2 div.b {
+    margin-bottom: 50px;
+}
+
+.b p {}
+
+.box2 div.c {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    width: 350px;
+    height: 30px;
+    margin-left: 100px;
+    line-height: 30px;
+    font-size: 10px;
+}
+
+.c p.p1 {
+    padding-left: 10px;
+    color: rgb(160, 154, 154);
+}
+
+.c p.p2 a {
+    display: block;
+    width: 100px;
+    background-color: rgb(75, 73, 73);
+    text-align: center;
+    text-decoration: none;
+    color: white;
+}
+
+.box2 .p2 a {
+    transition: transform .5s ease-out;
+}
+
+.box2 .p2 a:hover {
+    /*transform: scale(1.1);*/
+    font-size: 14px;
+    font-weight: bolder;
+}
+
+.box3 {
+    height: 450px;
+    display: flex;
+    color: white;
+    justify-content: center;
+    padding: 50px;
+    box-sizing: border-box;
+}
+
+.box3 div {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    flex: 0 0 250px;
+    height: 350px;
+    box-sizing: border-box;
+    padding-left: 20px;
+    padding-top: 20px;
+    text-align: justify;
+    padding-right: 40px;
+}
+
+.box3 div img {
+    width: 20%;
+    height: auto;
+    margin-top: 20px;
+}
+
+.box3 div h1 {
+    font-size: 50px;
+}
+
+.box3 div h2 {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.box3 div.aa {
+    background-color: rgb(240, 111, 37);
+}
+
+.box3 div.bb {
+    background-color: rgb(240, 61, 37);
+}
+
+.box3 div.cc {
+    background-color: rgb(51, 47, 46);
+}
+
+.box3 div.dd {
+    background-color: rgb(90, 83, 82);
+}
+
+.box3 img {
+    transition: transform 0.5s ease-out;
+}
+
+.box3 img:hover {
+    transform: scale(1.5);
+}
+
+.box4 {
+    background-color: rgb(234, 236, 234);
+    height: 400px;
+    display: flex;
+    justify-content: center;
+}
+
+.box04 {
+    width: 750px;
+}
+
+.box4 h1 {
+    color: rgb(240, 111, 37);
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 45px;
+}
+
+.box4 p {
+    color: rgb(90, 86, 86);
+    width: 620px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 15px;
+}
+
+.box4 p a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(90deg, rgb(255, 119, 0) 0%, rgba(253, 29, 29, 1) 90%);
+    width: 180px;
+    height: 40px;
+    margin: 30px auto;
+    text-align: center;
+    line-height: 40px;
+    font-size: 13px;
+}
+
+.box4 p a {
+    transition: transform 1s ease-out;
+}
+
+.box4 p a:hover {
+    transform: scale(1.2);
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+.box5 {
+    padding: 50px;
+}
+
+.box05 {
+    display: flex;
+    width: 900px;
+    height: 600px;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+.box05 div {
+    width: 300px;
+    height: 300px;
+    text-align: center;
+    box-sizing: border-box;
+    font-size: 14px;
+    background-color: rgb(234, 236, 234);
+}
+
+.box05 div img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.box05 div a {
+    color: black;
+}
+
+.box05 div.mid,
+div.left,
+div.right {
+    padding: 20px 10px;
+}
+
+.box05 div.left h2 img,
+div.right h2 img {
+    max-width: 30%;
+    max-height: auto;
+}
+
+.box05 div.mid {
+    padding-top: 80px;
+}
+
+.box05 div.left h2,
+div.right h2 {
+    margin: 10px 0 15px;
+}
+
+.box05 div.left p a,
+div.mid p a,
+div.right p a {
+    display: block;
+    margin-top: 20px;
+}
+
+.box05 div.left p a,
+div.mid p a,
+div.right p a {
+    transition: transform 0.5s ease-out;
+}
+
+.box05 div.left p a:hover,
+div.mid p a:hover,
+div.right p a:hover {
+    transform: scale(1.2);
+    font-weight: bold;
+}
+
+.box6 {
+    background-image: url(./handbg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 400px;
+}
+
+.box06 {
+    width: 1100px;
+    height: 400px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    /*justify-content: space-around;沒用到*/
+    padding-top: 200px;
+}
+
+.box06 div {
+    background-color: white;
+    width: 340px;
+    height: 320px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    border: rgb(155, 154, 154) thin solid;
+}
+
+.box06 div h1 {
+    margin-bottom: 5px;
+}
+
+.box06 div h2 {
+    margin-bottom: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(49, 48, 48);
+}
+
+.box06 div p {
+    font-style: italic;
+}
+
+.box7 {
+    height: 280px;
+    padding-top: 200px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    font-style: italic;
+}
+
+.box7 p {
+    text-align: center;
+}
+
+.box7 p.f {
+    color: rgb(33, 88, 190);
+    margin-left: 8px;
+}
+
+.box8 {
+    background-color: rgb(43, 39, 39);
+    height: 200px;
+    color: white;
+    text-align: center;
+    padding-top: 80px;
+    box-sizing: border-box;
+}
+
+.box8 p.g {
+    width: 550px;
+    margin: auto;
+}
+
+.box8 div {
+    display: flex;
+    justify-content: space-between;
+    width: 460px;
+    margin: 30px auto 0 auto;
+}
+
+.box8 div a {
+    display: block;
+    color: rgb(136, 204, 243);
+    transition: transform 0.5s ease-in-out;
+}
+
+.box8 div a:hover {
+    transform: scale(1.05);
+}
